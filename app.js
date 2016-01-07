@@ -7,8 +7,8 @@ var app 		= express();
 var http 		= require('http').Server(app);
 var io 			= require('socket.io')(http);
 var db_config	= require('./config/database.js');
-var mysql		= require('mysql');
-var connection	= mysql.createConnection(db_config);
+/*var mysql		= require('mysql');
+var connection	= mysql.createConnection(db_config);*/
 var sockets		= [];
 /*var cities		= [
 					{
@@ -56,6 +56,11 @@ io.on('connection', function(socket) {
 // routes
 app.get('/', function(req, res) {
 	res.render('index');
+});
+
+app.post('/track/:id/:lat/:long/:key', function(req, res) {
+	io.emit('location', req.params);
+	res.end();
 });
 
 app.get('/track/:id/:lat/:long/:key', function(req, res) {
