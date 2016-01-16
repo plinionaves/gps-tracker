@@ -1,0 +1,4 @@
+Database MySql
+
+Root User: plinionaves
+Database Name: c9
