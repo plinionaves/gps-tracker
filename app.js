@@ -57,4 +57,4 @@ app.get('models').sequelize
 		  console.log('App listening at http://%s:%s', host, port);
 		});	
 
-  });
+});

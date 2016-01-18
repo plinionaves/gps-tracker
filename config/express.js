@@ -27,8 +27,7 @@ module.exports = function() {
     app.set('views', './app/views');
     
     // load modules
-    load('controllers', {cwd: 'app'}) // ignore index.js file
-        //.then('controllers')
+    load('controllers', {cwd: 'app'})
         .then('routes')
         //.then('states')
         .then('migrations')
