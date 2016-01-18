@@ -1,22 +1,22 @@
 {
   "development": {
-    "username": process.env.C9_USER,
+    "username": "root",
     "password": null,
-    "database": "gpstracker",
+    "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": process.env.C9_USER,
+    "username": "root",
     "password": null,
-    "database": "gpstracker",
+    "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": process.env.C9_USER,
+    "username": "root",
     "password": null,
-    "database": "gpstracker",
+    "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

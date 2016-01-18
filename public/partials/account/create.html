@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="small-12 medium-12 large-12 coulumns">
+        
+        <h1>Criar nova conta</h1>
+        
+        <form name="formNewAccount">
+          <div class="row">
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Seu nome
+                <input type="text" name="name" ng-model="accountCreate.account.name" placeholder="Seu nome completo" required ng-minlength="3" ng-maxlength="60" max-length="60">
+              </label>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+              <label>E-mail
+                <input type="email" name="email" ng-model="accountCreate.account.email" placeholder="Seu melhor e-mail" required ng-maxlength="60" max-length="60">
+              </label>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Nickname
+                <input type="text" name="nickname" ng-model="accountCreate.account.nickname" placeholder="Escolha um nickname" required ng-minlength="3" ng-maxlength="20" max-length="20">
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Senha
+                <input type="password" name="password" ng-model="accountCreate.account.password" placeholder="Insira uma senha para acesso" required ng-minlength="6" ng-maxlength="20" max-length="20" />
+              </label>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Estado
+                <select name="state" required ng-model="accountCreate.state" ng-change="accountCreate.showCities()">
+                    <option value="1">Minas Gerais</option>
+                </select>
+              </label>
+            </div>
+            <div class="small-12 medium-4 large-4 columns" ng-show="accountCreate.state">
+              <label>Cidade
+                <select name="city" required ng-model="accountCreate.account.city">
+                    <option ng-repeat="city in accountCreate.cities" value="{{city.id}}">{{city.name}}</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </form>
+        
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns" ng-show="formNewAccount.$invalid">
+                <div class="callout alert">
+                  <h5>Instruções de preenchimento</h5>
+                  <ul>
+                      <li ng-show="formNewAccount.name.$error.required">O campo 'nome' é obrigatório</li>
+                      <li ng-show="formNewAccount.name.$error.minlength">O campo 'nome' deve ter no mínimo 3 caracteres</li>
+                      <li ng-show="formNewAccount.name.$error.maxlength">O campo 'nome' deve ter no máximo 60 caracteres</li>
+                      <li ng-show="formNewAccount.email.$error.required">O campo 'email' é obrigatório</li>
+                      <li ng-show="formNewAccount.email.$error.email">Insira um e-mail válido</li>
+                      <li ng-show="formNewAccount.nickname.$error.required">O campo 'nickname' é obrigatório</li>
+                      <li ng-show="formNewAccount.nickname.$error.minlength">O campo 'nickname' deve ter no mínimo 3 caracteres</li>
+                      <li ng-show="formNewAccount.password.$error.required">O campo 'senha' é obrigatório</li>
+                      <li ng-show="formNewAccount.password.$error.minlength">O campo 'senha' deve ter no mínimo 6 caracteres</li>
+                      <li ng-show="formNewAccount.state.$error.required">O campo 'estado' é obrigatório</li>
+                      <li ng-show="formNewAccount.city.$error.required && accountCreate.state">O campo 'cidade' é obrigatório</li>
+                  </ul>
+                </div>
+            </div>
+            <div class="small-12 medium-12 large-12 columns">
+                <button class="button success" ng-disabled="formNewAccount.$invalid" ng-click="accountCreate.createAccount()">Criar Conta</button>
+                <a class="button secondary" href="#/account">Cancelar</a>
+            </div>
+        </div>
+        
+    </div>
+</div>

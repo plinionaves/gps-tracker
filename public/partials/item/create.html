@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="small-12 medium-12 large-12 coulumns">
+        
+        <h1>Novo Item</h1>
+        
+        <form name="formNewItem">
+          <div class="row">
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Nome
+                <input type="text" name="name" ng-model="itemCreate.item.name" placeholder="Nome do item" required ng-minlength="3" ng-maxlength="45" max-length="45">
+              </label>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Imagem
+                <input type="file" name="image" ng-model="itemCreate.item.image" placeholder="Selecione uma imagem">
+              </label>
+            </div>
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Categoria
+                <select name="category" required ng-model="itemCreate.item.category">
+                    <option value="1">Veículos</option>
+                </select>
+            </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 medium-4 large-4 columns">
+              <label>Descrição
+                <textarea name="description" ng-model="itemCreate.item.description" placeholder="Descrição do item" required></textarea>
+              </label>
+            </div>
+          </div>
+        </form>
+        
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns" ng-show="formNewItem.$invalid">
+                <div class="callout alert">
+                  <h5>Instruções de preenchimento</h5>
+                  <ul>
+                      <li ng-show="formNewItem.name.$error.required">O campo 'nome' é obrigatório</li>
+                      <li ng-show="formNewItem.name.$error.minlength">O campo 'nome' deve ter no mínimo 3 caracteres</li>
+                      <li ng-show="formNewItem.name.$error.maxlength">O campo 'nome' deve ter no máximo 45 caracteres</li>
+                      <li ng-show="formNewItem.description.$error.required">O campo 'descrição' é obrigatório</li>
+                      <li ng-show="formNewItem.image.$error.required">O campo 'imagem' é obrigatório</li>
+                      <li ng-show="formNewItem.category.$error.required">O campo 'categoria' é obrigatório</li>
+                  </ul>
+                </div>
+            </div>
+            <div class="small-12 medium-12 large-12 columns">
+                <button class="button success" ng-disabled="formNewItem.$invalid" ng-click="itemCreate.createItem()">Salvar</button>
+                <a class="button secondary" href="#/account">Cancelar</a>
+            </div>
+        </div>
+        
+    </div>
+</div>

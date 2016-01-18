@@ -2,6 +2,8 @@ var express     = require('express');
 var load        = require('express-load');
 var bodyParser  = require('body-parser');
 var path		= require('path');
+var sequelize   = require('sequelize-middleware');
+var db          = require('./database.json');
 
 module.exports = function() {
     
@@ -21,11 +23,12 @@ module.exports = function() {
     app.set('views', './app/views');
     
     // load modules
-    /*load('models', {cwd: 'app'})
+    load('models', {cwd: 'app'}) // ignore index.js file
         .then('controllers')
         .then('routes')
         //.then('states')
-        .into(app);*/
+        .then('migrations')
+        .into(app);
         
     return app;
     

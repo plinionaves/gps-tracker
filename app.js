@@ -43,24 +43,10 @@ app.get('/track/:id/:lat/:long/:key', function(req, res) {
 });
 
 // start server
-/*var server = http.listen(process.env.PORT || 8080, function(){
+var server = http.listen(process.env.PORT || 8080, function(){
   var host = server.address().address;
   var host = '127.0.0.1';
   var port = server.address().port;
 
   console.log('App listening at http://%s:%s', host, port);
-});*/
-
-var models = require("app/models/index");
-
-models.sequelize.sync().then(function() {
-    
-    var server = http.listen(process.env.PORT || 8080, function(){
-	  var host = server.address().address;
-	  var host = '127.0.0.1';
-	  var port = server.address().port;
-	
-	  console.log('App listening at http://%s:%s', host, port);
-	});
-    
 });

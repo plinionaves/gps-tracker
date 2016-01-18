@@ -4,4 +4,13 @@ h1,h2,h3,h4,h5,h6,p,a,span,input,textarea,label,legend {
     font-family: 'Open Sans', sans-serif;
 }
 
-div#map { width: 100%; height: 100%; background: #ccc; }
+ul { list-style-type: none; }
+ul li { list-style-type: none; }
+
+#map { width: 100%; height: 500px; background: #333; }
+
+.vertical-center { display: table-cell; vertical-align: middle; }
+.home-text { margin-top: 20%; }
+.views { height: 100%; }
+.home { width: 100%; height: 100%; background-size: cover !important; background: url("https://images.unsplash.com/photo-1432741826919-baadebff52aa?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=47ff48f0767d75c6e794bfe01669c851"); }
+.color-white {color: #fff;}
