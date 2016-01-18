@@ -7,7 +7,13 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate: function(models) {
-                
+                State.belongsTo(models.Country, {
+                  onDelete: "RESTRICT",
+                  foreignKey: {
+                    allowNull: false,
+                    name: 'country'
+                  }
+                });
             }
         }
     });

@@ -9,7 +9,20 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate: function(models) {
-                
+                Item.belongsTo(models.Category, {
+                  onDelete: "RESTRICT",
+                  foreignKey: {
+                    allowNull: false,
+                    name: 'category'
+                  }
+                });
+                Item.belongsTo(models.Account, {
+                  onDelete: "RESTRICT",
+                  foreignKey: {
+                    allowNull: false,
+                    name: 'account'
+                  }
+                });
             }
         }
     });

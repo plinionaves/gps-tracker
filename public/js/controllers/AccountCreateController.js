@@ -17,7 +17,13 @@
         }
         
         vm.createAccount = function() {
-            console.log(vm.account);
+            $http
+                .post('/account/create', vm.account)
+                .then(function success(response) {
+                    console.log(response);
+                }, function error(response) {
+                    console.log(response);
+                });
         }
        
     });

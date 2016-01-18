@@ -9,7 +9,13 @@ module.exports = function(sequelize, DataTypes) {
     }, {
         classMethods: {
             associate: function(models) {
-                
+                Account.belongsTo(models.City, {
+                  onDelete: "RESTRICT",
+                  foreignKey: {
+                    allowNull: false,
+                    name: 'city'
+                  }
+                });
             }
         }
     });

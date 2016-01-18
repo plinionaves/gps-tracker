@@ -42,8 +42,8 @@ app.get('/track/:id/:lat/:long/:key', function(req, res) {
 });
 
 app.get('models').sequelize
-  //.sync({ force: true})
-  .sync()
+  .sync({ force: true})
+  //.sync()
   .then(function() {
       // seed
       //require('./seeders')(db);
