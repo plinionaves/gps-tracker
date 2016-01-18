@@ -20,12 +20,13 @@
     "jade": "^1.11.0",
     "method-override": "^2.1.3",
     "mysql": "^2.10.2",
-    "mysql2": "^0.15.8",
     "sequelize": "^3.17.3",
+    "sequelize-middleware": "^1.0.0",
     "socket.io": "^1.3.7"
   },
   "devDependencies": {
-    "jshint": "^2.8.0"
+    "jshint": "^2.8.0",
+    "sequelize-cli": "^2.3.1"
   },
   "engines": {
     "node": ">=0.12.7"

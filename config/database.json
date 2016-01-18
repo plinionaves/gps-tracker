@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "plinionaves",
+    "password": null,
+    "database": "gpstracker",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "plinionaves",
+    "password": null,
+    "database": "gpstracker",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "plinionaves",
+    "password": null,
+    "database": "gpstracker",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
